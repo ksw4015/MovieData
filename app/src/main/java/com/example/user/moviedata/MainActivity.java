@@ -49,12 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
 
-                    ArrayList<Movie> movieList = response.body().getResults();
+                    if(response.body() != null) {
+                        ArrayList<Movie> movieList = response.body().getResults();
 
-                    MovieAdapter mAdapter = new MovieAdapter(MainActivity.this, movieList);
-                    playingMovieListView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                    playingMovieListView.setHasFixedSize(true);
-                    playingMovieListView.setAdapter(mAdapter);
+                        MovieAdapter mAdapter = new MovieAdapter(MainActivity.this, movieList);
+                        playingMovieListView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                        playingMovieListView.setHasFixedSize(true);
+                        playingMovieListView.setAdapter(mAdapter);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "정보를 가져오지 못했습니다. \nAPI키를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
 
