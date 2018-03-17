@@ -53,6 +53,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                 .append(movieList.get(position).getReleaseDate())
                 .append(" 개봉")
                 .toString());
+
+        holder.movieCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
