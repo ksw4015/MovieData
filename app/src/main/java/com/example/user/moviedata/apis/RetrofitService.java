@@ -1,6 +1,9 @@
 package com.example.user.moviedata.apis;
 
 import com.example.user.moviedata.model.Movie;
+import com.example.user.moviedata.model.MovieResponse;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,7 +18,7 @@ public interface RetrofitService {
 
     // 현재 상영작 리스트 요청
     @GET("movie/now_playing")
-    Call<Movie> getNowPlayingMovies(@Query("api_key") String apiKey, @Query("region") String region, @Query("language") String language);    // &파라메터=값의 형식으로 넘길땐 @Query 사용
+    Call<MovieResponse> getNowPlayingMovies(@Query("api_key") String apiKey, @Query("region") String region, @Query("language") String language);    // &파라메터=값의 형식으로 넘길땐 @Query 사용
 
     // 영화 상세정보 요청
     @GET("movie/{movie_id}")
