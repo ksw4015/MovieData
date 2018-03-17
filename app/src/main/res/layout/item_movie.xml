@@ -2,7 +2,7 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/movie_card">
 
     <RelativeLayout
@@ -12,7 +12,7 @@
 
         <ImageView
             android:id="@+id/movie_poster"
-            android:layout_width="wrap_content"
+            android:layout_width="72dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/poster_margin"/>
 
@@ -29,20 +29,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/movie_info_margin_top"
                 android:layout_marginBottom="@dimen/movie_info_margin_bottom"
-                android:textSize="@dimen/movie_title_text"/>
+                android:textSize="@dimen/movie_title_text"
+                android:textColor="@color/movie_title"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/movie_average"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/movie_info_margin_bottom"
-                android:textSize="@dimen/movie_other_text"/>
+                android:textSize="@dimen/movie_other_text"
+                android:textColor="@color/movie_others"/>
 
             <TextView
                 android:id="@+id/movie_release"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/movie_other_text"/>
+                android:textSize="@dimen/movie_other_text"
+                android:textColor="@color/movie_others"/>
 
         </LinearLayout>
 

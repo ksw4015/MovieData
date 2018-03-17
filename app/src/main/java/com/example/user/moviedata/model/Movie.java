@@ -40,7 +40,23 @@ public class Movie {
     }
 
     public String getReleaseDate() {
-        return releaseDate;
+
+        String date[] = releaseDate.split("-");
+        String month = convertDate(date[1]);
+        String day = convertDate(date[2]);
+
+        return month + "월 " + day + "일";
+    }
+
+    private String convertDate(String date) {
+
+        StringBuilder builder = new StringBuilder(date);
+
+        if(builder.charAt(0) == '0') {
+            builder.delete(0, 1);
+        }
+
+        return builder.toString();
     }
 
 }

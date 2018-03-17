@@ -2,7 +2,9 @@ package com.example.user.moviedata;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.user.moviedata.adapter.MovieAdapter;
@@ -20,6 +22,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView playingMovieListView;
+    int width;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                     ArrayList<Movie> movieList = response.body().getResults();
 
                     MovieAdapter mAdapter = new MovieAdapter(MainActivity.this, movieList);
+                    playingMovieListView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                    playingMovieListView.setHasFixedSize(true);
                     playingMovieListView.setAdapter(mAdapter);
 
                 }

@@ -41,12 +41,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
         Glide.with(mContext)
                 .load(movieList.get(position).getPosterPath())
-                .centerCrop()
                 .into(holder.moviePoster);
 
         holder.movieTitle.setText(movieList.get(position).getMoiveTitle());
-        holder.movieAverage.setText(average);
-        holder.movieRelease.setText(movieList.get(position).getReleaseDate());
+        holder.movieAverage.setText(new StringBuilder()
+                .append("평균 ")
+                .append(average)
+                .append("점")
+                .toString());
+        holder.movieRelease.setText(new StringBuilder()
+                .append(movieList.get(position).getReleaseDate())
+                .append(" 개봉")
+                .toString());
     }
 
     @Override
