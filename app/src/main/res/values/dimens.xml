@@ -3,4 +3,7 @@
     <dimen name="poster_margin">16dp</dimen>
     <dimen name="movie_info_margin_bottom">8dp</dimen>
     <dimen name="movie_info_margin_top">16dp</dimen>
+
+    <dimen name="movie_title_text">24sp</dimen>
+    <dimen name="movie_other_text">14sp</dimen>
 </resources>
