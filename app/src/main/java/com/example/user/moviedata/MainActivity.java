@@ -30,10 +30,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         playingMovieListView = (RecyclerView)findViewById(R.id.playing_movie_list);
-        getMovieData();
+        if(playingMovieListView != null) {
+            getMovieData();
+        }
 
     }
 
+    // 현재 상영작을 Api 요청을 통해 받아오고 리사이클러 뷰를 통해 보여준다
     private void getMovieData() {
 
         try {

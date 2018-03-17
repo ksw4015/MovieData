@@ -77,12 +77,15 @@ public class DetailsActivity extends AppCompatActivity {
                 public void onResponse(Call<Details> call, Response<Details> response) {
                     Details movieDetails = (Details)response.body();
 
+                    //
                     String count = Integer.toString(movieDetails.getRateCount());
                     String average = Double.toString(movieDetails.getRateAverage());
                     String runtime = Integer.toString(movieDetails.getRunTime());
 
+                    // 개봉년도
                     String year = movieDetails.getReleaseDate().substring(0, 4);
 
+                    // 영화의 backdrop 이미지가 없는경우 기본 이미지 셋팅
                     if(movieDetails.getBackdropPath() == null) {
                         Glide.with(DetailsActivity.this)
                                 .load(R.drawable.placeholder_image)
@@ -94,30 +97,38 @@ public class DetailsActivity extends AppCompatActivity {
                                 .into(movieBackdrop);
                     }
 
-
-
+                    // 포스터 이미지
                     Glide.with(DetailsActivity.this)
                             .load(movieDetails.getPosterPath())
                             .into(moviePoster);
 
+                    // 영화 제목
                     movieTitle.setText(movieDetails.getMovieTitle());
+                    // 액션바 제목을 영화제목으로
                     actionBar.setTitle(movieDetails.getMovieTitle());
+                    // 평균 별점
                     movieAverage.setText(new StringBuilder()
                             .append("평균 ")
                             .append(average)
                             .append("점")
                             .toString());
+                    // 투표한 인원 수
                     movieCount.setText(new StringBuilder()
                             .append("(")
                             .append(count)
                             .append(" 명)")
                             .toString());
 
+                    // 영화의 영어제목 (원제)
                     movieOriginal.setText(movieDetails.getOriginalTitle());
+                    // 러닝타임
                     movieRuntime.setText(runtime + "분");
+                    // 줄거리 요약
                     movieOverview.setText(movieDetails.getOverView());
+                    // 개봉년도
                     movieReleaseYear.setText(year);
 
+                    // 장르 장르1ㆍ장르2....
                     StringBuilder genreBuilder = new StringBuilder();
                     for(int i = 0 ; i < movieDetails.getMovieGenres().size() ; i++) {
                         if(i == movieDetails.getMovieGenres().size() - 1) {

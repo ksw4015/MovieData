@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Client {
 
+    // Api요청시 Base Url주소
     public static final String BASE_URL = "https://api.themoviedb.org/3/";
     public static Retrofit retrofit = null;
 
