@@ -30,7 +30,7 @@
                 android:layout_marginTop="@dimen/movie_info_margin_top"
                 android:layout_marginBottom="@dimen/movie_info_margin_bottom"
                 android:textSize="@dimen/movie_title_text"
-                android:textColor="@color/movie_title"
+                android:textColor="@color/movie_title_black"
                 android:textStyle="bold"/>
 
             <TextView
