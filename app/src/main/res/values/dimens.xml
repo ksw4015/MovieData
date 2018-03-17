@@ -4,8 +4,13 @@
     <dimen name="movie_info_margin_bottom">8dp</dimen>
     <dimen name="movie_info_margin_top">16dp</dimen>
 
+    <dimen name="movie_info_padding">16dp</dimen>
+    <dimen name="movie_info_small_padding">4dp</dimen>
+
     <dimen name="movie_poster_size">72dp</dimen>
 
     <dimen name="movie_title_text">16sp</dimen>
     <dimen name="movie_other_text">12sp</dimen>
+    <dimen name="movie_details_title">24sp</dimen>
+    <dimen name="movie_details_average">14sp</dimen>
 </resources>

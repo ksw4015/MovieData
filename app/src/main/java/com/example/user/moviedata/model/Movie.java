@@ -1,15 +1,14 @@
 package com.example.user.moviedata.model;
 
+import com.example.user.moviedata.Constants;
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by USER on 2018-03-17.
+ * 현재 상영작 목록의 간략한 정보
  */
 
 public class Movie {
-
-    // 포스터 및 백드롭 이미지 URL
-    public static final String baseImgURL = "https://image.tmdb.org/t/p/w500";
 
     @SerializedName("title")
     private String moiveTitle;
@@ -19,12 +18,15 @@ public class Movie {
     private Double rateAverage;
     @SerializedName("release_date")
     private String releaseDate;
+    @SerializedName("id")
+    private Integer movieId;
 
-    public Movie(String moiveTitle, String posterPath, Double rateAverage, String releaseDate) {
+    public Movie(String moiveTitle, String posterPath, Double rateAverage, String releaseDate, Integer movieId) {
         this.moiveTitle = moiveTitle;
         this.posterPath = posterPath;
         this.rateAverage = rateAverage;
         this.releaseDate = releaseDate;
+        this.movieId = movieId;
     }
 
     public String getMoiveTitle() {
@@ -32,7 +34,7 @@ public class Movie {
     }
 
     public String getPosterPath() {
-        return baseImgURL + posterPath;
+        return Constants.baseImgURL + posterPath;
     }
 
     public Double getRateAverage() {
@@ -59,4 +61,7 @@ public class Movie {
         return builder.toString();
     }
 
+    public Integer getMovieId() {
+        return movieId;
+    }
 }

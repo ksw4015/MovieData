@@ -1,5 +1,6 @@
 package com.example.user.moviedata.apis;
 
+import com.example.user.moviedata.model.Details;
 import com.example.user.moviedata.model.Movie;
 import com.example.user.moviedata.model.MovieResponse;
 
@@ -22,5 +23,5 @@ public interface RetrofitService {
 
     // 영화 상세정보 요청
     @GET("movie/{movie_id}")
-    Call getMovieDetails(@Path("movie_id") Integer id, @Query("api_key") String apiKey, @Query("language") String language);
+    Call<Details> getMovieDetails(@Path("movie_id") Integer id, @Query("api_key") String apiKey, @Query("language") String language);
 }

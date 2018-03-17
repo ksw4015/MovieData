@@ -12,7 +12,7 @@
 
         <ImageView
             android:id="@+id/movie_poster"
-            android:layout_width="72dp"
+            android:layout_width="@dimen/movie_poster_size"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/poster_margin"/>
 
@@ -30,7 +30,7 @@
                 android:layout_marginTop="@dimen/movie_info_margin_top"
                 android:layout_marginBottom="@dimen/movie_info_margin_bottom"
                 android:textSize="@dimen/movie_title_text"
-                android:textColor="@color/movie_title_black"
+                android:textColor="@color/movie_text_black"
                 android:textStyle="bold"/>
 
             <TextView

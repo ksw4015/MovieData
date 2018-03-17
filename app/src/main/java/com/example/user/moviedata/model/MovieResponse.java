@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by USER on 2018-03-17.
+ * 현재 상영작 목록
  */
 
 public class MovieResponse {

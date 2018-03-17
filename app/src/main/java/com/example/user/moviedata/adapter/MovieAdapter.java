@@ -1,6 +1,7 @@
 package com.example.user.moviedata.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.user.moviedata.DetailsActivity;
 import com.example.user.moviedata.R;
 import com.example.user.moviedata.model.Movie;
 
@@ -35,7 +37,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(MovieAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(MovieAdapter.ViewHolder holder, final int position) {
 
         String average = Double.toString(movieList.get(position).getRateAverage());
 
@@ -57,7 +59,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         holder.movieCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(mContext, DetailsActivity.class);
+                intent.putExtra(mContext.getResources().getString(R.string.movie_id), movieList.get(position).getMovieId());
+                mContext.startActivity(intent);
             }
         });
     }
