@@ -23,9 +23,9 @@
 
             <RelativeLayout
                 android:layout_toRightOf="@+id/movie_details_poster"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/movie_poster">
 
                 <TextView
                     android:id="@+id/movie_details_title"
@@ -64,63 +64,69 @@
 
         </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_below="@+id/movie_backdrop"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/movie_original_title"
-            android:layout_below="@+id/movie_backdrop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/movie_info_padding"
-            android:paddingLeft="@dimen/movie_info_padding"
-            android:text="원제"
-            android:textSize="@dimen/movie_details_title"
-            android:textStyle="bold"/>
-
         <LinearLayout
-            android:id="@+id/movie_details_layout"
-            android:layout_below="@id/movie_original_title"
-            android:orientation="horizontal"
+            android:layout_below="@+id/movie_backdrop"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/movie_info_padding"
-            android:paddingLeft="@dimen/movie_info_padding">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/movie_release_year"
-                android:layout_width="wrap_content"
+                android:id="@+id/movie_original_title"
+                android:layout_below="@+id/movie_backdrop"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1980"/>
+                android:paddingTop="@dimen/movie_info_padding"
+                android:paddingLeft="@dimen/movie_info_padding"
+                android:text="원제"
+                android:textSize="@dimen/movie_details_title"
+                android:textStyle="bold"/>
 
+            <LinearLayout
+                android:id="@+id/movie_details_layout"
+                android:layout_below="@id/movie_original_title"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/movie_info_padding"
+                android:paddingLeft="@dimen/movie_info_padding">
+
+                <TextView
+                    android:id="@+id/movie_release_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1980"/>
+
+
+                <TextView
+                    android:id="@+id/movie_genres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/movie_info_small_padding"
+                    android:text="범죄 스릴러"/>
+
+                <TextView
+                    android:id="@+id/movie_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/movie_info_small_padding"
+                    android:text="115분"/>
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/movie_genres"
-                android:layout_width="wrap_content"
+                android:id="@+id/movie_overview"
+                android:layout_below="@+id/movie_details_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/movie_info_small_padding"
-                android:text="범죄 스릴러"/>
-
-            <TextView
-                android:id="@+id/movie_runtime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/movie_info_small_padding"
-                android:text="115분"/>
+                android:padding="@dimen/movie_info_padding"
+                android:textSize="@dimen/movie_title_text"/>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/movie_overview"
-            android:layout_below="@+id/movie_details_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/movie_info_padding"
-            android:textSize="@dimen/movie_title_text"/>
-
-    </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>

@@ -73,6 +73,9 @@ public class Details {
     }
 
     public String getBackdropPath() {
+        if(backdropPath == null) {
+            return null;
+        }
         return Constants.baseImgURL + backdropPath;
     }
 

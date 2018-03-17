@@ -83,13 +83,21 @@ public class DetailsActivity extends AppCompatActivity {
 
                     String year = movieDetails.getReleaseDate().substring(0, 4);
 
-                    Glide.with(DetailsActivity.this)
-                            .load(movieDetails.getBackdropPath())
-                            .into(movieBackdrop);
+                    if(movieDetails.getBackdropPath() == null) {
+                        Glide.with(DetailsActivity.this)
+                                .load(R.drawable.placeholder_image)
+                                .into(movieBackdrop);
+                    }
+                    else {
+                        Glide.with(DetailsActivity.this)
+                                .load(movieDetails.getBackdropPath())
+                                .into(movieBackdrop);
+                    }
+
+
 
                     Glide.with(DetailsActivity.this)
                             .load(movieDetails.getPosterPath())
-                            .placeholder(R.drawable.placeholder_image)
                             .into(moviePoster);
 
                     movieTitle.setText(movieDetails.getMovieTitle());
