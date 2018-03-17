@@ -7,7 +7,7 @@ package com.example.user.moviedata;
 
 public class Constants {
     // API 키
-    public static final String API_KEY = "413ea49d08068f61d87903bd4f22b690";
+    public static final String API_KEY = "YOUR_API_KEY";
     // 국가
     public static final String MY_REGION = "KR";
     // 언어
