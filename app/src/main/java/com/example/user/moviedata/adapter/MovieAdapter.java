@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 /**
  * Created by USER on 2018-03-17.
+ * 리사이클러 뷰 어댑터 클래스
  */
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
@@ -41,26 +42,31 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
         String average = Double.toString(movieList.get(position).getRateAverage());
 
+        // 포스터 이미지
         Glide.with(mContext)
                 .load(movieList.get(position).getPosterPath())
                 .into(holder.moviePoster);
 
+        // 제목
         holder.movieTitle.setText(movieList.get(position).getMoiveTitle());
+        // 평균 별점
         holder.movieAverage.setText(new StringBuilder()
                 .append("평균 ")
                 .append(average)
                 .append("점")
                 .toString());
+        // 개봉날짜
         holder.movieRelease.setText(new StringBuilder()
                 .append(movieList.get(position).getReleaseDate())
                 .append(" 개봉")
                 .toString());
 
+        // 카드뷰 아이템에 클릭 리스너 등록
         holder.movieCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, DetailsActivity.class);
-                intent.putExtra(mContext.getResources().getString(R.string.movie_id), movieList.get(position).getMovieId());
+                intent.putExtra(mContext.getResources().getString(R.string.movie_id), movieList.get(position).getMovieId()); // DetailsActivity에서 영화 정보 Api를 요청하기위해 영화 ID값 전달
                 mContext.startActivity(intent);
             }
         });

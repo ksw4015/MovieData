@@ -12,6 +12,6 @@ public class Constants {
     public static final String MY_REGION = "KR";
     // 언어
     public static final String MY_LANGUAGE = "ko-KR";
-
+    // 이미지 BASE_URL
     public static final String baseImgURL = "https://image.tmdb.org/t/p/w500";
 }

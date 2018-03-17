@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Details {
     /*
         제목, 런타임, 원제, 요약 줄거리, 이미지 URL,
-        개봉날짜, 평균점수, 투표인원
+        개봉날짜, 평균점수, 투표인원, 장르
      */
     @SerializedName("title")
     private String movieTitle;
