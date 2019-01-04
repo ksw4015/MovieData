@@ -22,4 +22,4 @@
 해당 영화를 터치하면 좀 더 자세한 정보를 볼 수 있게 하는 어플리케이션 입니다(영화당 7~8가지 정보)
 
 
-JSON데이터 파싱은 GSON으로 하였고, RestFul Api를 연결하기 위해 Retrofit2를 
+JSON데이터 파싱은 GSON으로 하였고, RestFul Api를 연결하기 위해 Retrofit2를 사용했습니다
